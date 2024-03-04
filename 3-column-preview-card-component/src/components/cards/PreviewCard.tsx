@@ -1,43 +1,63 @@
 import Image from "next/image";
-import {Big_Shoulders_Display} from "next/font/google"
+import { lexenda, bigShoulder } from "@/app/fonts";
+import { ReactNode } from "react";
+import { StaticImageData } from "next/image";
 
-const big_shoulders_display = Big_Shoulders_Display({
-  weight: ["400","500"],
-    subsets: ["latin"],
-  
-    
-});
+interface PreviewCardProps {
+  color: string;
+  title: string;
+  icon: string;
+  content: ReactNode;
+}
 
-const PreviewCard = () => {
+const PreviewCard = (props: PreviewCardProps) => {
   return (
-    <article className="border-2 flex flex-col max-w-[480px] lg:flex-row lg:max-w-[1000px] m-2 rounded-lg">
-      <div>
+    <article className=" flex flex-col max-w-[480px] lg:flex-row lg:max-w-[1000px] mx-3 my-10 ">
+      <div className=" bg-brightOrange p-10 space-y-8 rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg">
+        <Image src={`${icon}`} alt="sedan" width={64} height={100} />
+        <h1
+          className={`${bigShoulder.className} text-4xl font-bold text-white`}
+        >
+          {title}
+        </h1>
+        <p className=" text-transparentWhite/70">{content}</p>
+        <button
+          className={`${color} bg-veryLightGray/100 rounded-full px-7 py-3`}
+        >
+          Learn More
+        </button>
+      </div>
+
+      <div className=" bg-darkCyan p-10  space-y-8 ">
         <Image src="/icon-sedan.svg" alt="sedan" width={64} height={100} />
-              <h1 className={`${big_shoulders_display.className} text-3xl font-bold`} >SEDANS</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem porro
-          quisquam molestias fugit at inventore nulla aliquam vel, odit eius
-          dolores autem tempora.
+        <h1
+          className={`${bigShoulder.className} text-4xl font-bold text-white`}
+        >
+          SEDANS
+        </h1>
+        <p className=" text-transparentWhite/70">
+          Choose a sedan for its affordability and excellent fuel economy. Ideal
+          for cruising in the city or on your next road trip.
         </p>
-        <button>Learn More </button>
+        <button className=" bg-veryLightGray/100 rounded-full px-7 py-3  text-brightOrange">
+          Learn More
+        </button>
       </div>
-      <div>
-        <h1>SEDANS</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem porro
-          quisquam molestias fugit at inventore nulla aliquam vel, odit eius
-          dolores autem tempora.
+
+      <div className=" bg-veryDarkCyan p-10 space-y-8 rounded-b-lg  lg:rounded-e-lg lg:rounded-s-none">
+        <Image src="/icon-sedan.svg" alt="sedan" width={64} height={100} />
+        <h1
+          className={`${bigShoulder.className} text-4xl font-bold text-white`}
+        >
+          SEDANS
+        </h1>
+        <p className=" text-transparentWhite/70">
+          Choose a sedan for its affordability and excellent fuel economy. Ideal
+          for cruising in the city or on your next road trip.
         </p>
-        <button>Learn More </button>
-      </div>
-      <div>
-        <h1>SEDANS</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem porro
-          quisquam molestias fugit at inventore nulla aliquam vel, odit eius
-          dolores autem tempora.
-        </p>
-        <button>Learn More </button>
+        <button className=" bg-veryLightGray/100 rounded-full px-7 py-3  text-brightOrange">
+          Learn More
+        </button>
       </div>
     </article>
   );
