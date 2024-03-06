@@ -1,4 +1,4 @@
-import PreviewCard from "@/components/cards/PreviewCard";
+import PreviewCard from "@/components/cards/CardSection";
 
 const Home = () => {
   return (
