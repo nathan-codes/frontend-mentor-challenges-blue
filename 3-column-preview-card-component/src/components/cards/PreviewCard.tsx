@@ -17,7 +17,7 @@ const PreviewCard = (props:PreviewCardProps) => {
           <Image src={props.icon}  alt="sedan" width={64} height={100} />
           
 
-      <h1 className={`${bigShoulder.className} text-4xl font-bold text-white`}>
+      <h1 className={`${bigShoulder.className} text-4xl font-bold text-white`} >
         {props.title}
       </h1>
       <p className="text-transparentWhite/70">{props.children}</p>
