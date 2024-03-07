@@ -12,7 +12,7 @@ interface PreviewCardProps {
 
 const PreviewCard = (props:PreviewCardProps) => {
   return (
-    <div className=" bg-brightOrange p-10 space-y-8 ">
+      <div className={` bg-${props.color}  p-10 space-y-8`}>
           
           <Image src={props.icon}  alt="sedan" width={64} height={100} />
           
@@ -20,9 +20,9 @@ const PreviewCard = (props:PreviewCardProps) => {
       <h1 className={`${bigShoulder.className} text-4xl font-bold text-white`}>
         {props.title}
       </h1>
-      <p className=" text-transparentWhite/70">{props.children}</p>
+      <p className="text-transparentWhite/70">{props.children}</p>
       <button
-        className={`${props.color} bg-veryLightGray/100 rounded-full px-7 py-3`}
+        className={`bg-veryLightGray/100 rounded-full px-7 py-3 text-${props.color}`}
       >
         Learn More
       </button>
